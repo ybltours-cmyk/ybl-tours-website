@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YBL TOURS - Your Perfect Travel Companion</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Header Bar -->
+    <div class="top-header">
+        <div class="container">
+            <div class="top-header-content">
+                <div class="header-contact">
+                    <span><i class="fas fa-phone"></i> +1 (555) 123-4567</span>
+                    <span><i class="fas fa-envelope"></i> info@ybltours.com</span>
+                </div>
+                <div class="header-actions">
+                    <a href="#"><i class="fas fa-gift"></i> Gift Cards & Offers</a>
+                    <a href="#"><i class="fas fa-star"></i> Loyalty Program</a>
+                    <a href="#"><i class="fas fa-user"></i> My Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="YBL TOURS" class="logo-image">
+            </div>
+
+            <!-- Main Menu -->
+            <div class="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-umbrella-beach"></i>
+                            Holidays
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-money-bill-wave"></i>
+                            Forex
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/flights.html" class="nav-link">
+                            <i class="fas fa-plane"></i>
+                            Flights
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/hotels.html" class="nav-link">
+                            <i class="fas fa-hotel"></i>
+                            Hotels
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-ship"></i>
+                            Cruise
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-train"></i>
+                            Eurail
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- User Actions -->
+            <div class="nav-actions">
+                <button class="btn-forex">
+                    <i class="fas fa-money-bill-wave"></i>
+                    Buy Forex
+                </button>
+                <div class="user-buttons">
+                    <button class="btn-login">Login</button>
+                    <button class="btn-signup">Sign Up</button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Promotional Banner -->
+    <div class="promo-banner">
+        <div class="container">
+            <div class="promo-content">
+                <div class="promo-text">
+                    <span class="promo-badge">EUROPE</span>
+                    <h3>No one knows it better than YBL TOURS</h3>
+                    <p>Holidays Starting <strong>@ ₹ 1,62,500.00</strong></p>
+                </div>
+                <div class="promo-actions">
+                    <button class="btn-promo">Book Now</button>
+                    <button class="btn-promo-outline">View Packages</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Discover the World with <span class="highlight">YBL TOURS</span></h1>
+                <p class="hero-subtitle">Your journey begins here - Explore, Experience, Enjoy</p>
+                
+                <!-- Main Search Container -->
+                <div class="search-container">
+                    <div class="search-tabs">
+                        <button class="tab-btn active" data-tab="flights">
+                            <i class="fas fa-plane"></i>
+                            Flights
+                        </button>
+                        <button class="tab-btn" data-tab="hotels">
+                            <i class="fas fa-hotel"></i>
+                            Hotels
+                        </button>
+                        <button class="tab-btn" data-tab="tours">
+                            <i class="fas fa-map-marked-alt"></i>
+                            Tours
+                        </button>
+                        <button class="tab-btn" data-tab="packages">
+                            <i class="fas fa-suitcase"></i>
+                            Packages
+                        </button>
+                    </div>
+                    
+                    <div class="search-forms">
+                        <!-- Flights Search Form -->
+                        <form class="search-form active" id="flights-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="flight-from">
+                                        <i class="fas fa-plane-departure"></i>
+                                        From
+                                    </label>
+                                    <input type="text" id="flight-from" placeholder="Departure City" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="flight-to">
+                                        <i class="fas fa-plane-arrival"></i>
+                                        To
+                                    </label>
+                                    <input type="text" id="flight-to" placeholder="Destination City" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="flight-depart">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        Departure
+                                    </label>
+                                    <input type="date" id="flight-depart" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="flight-return">
+                                        <i class="fas fa-calendar-check"></i>
+                                        Return
+                                    </label>
+                                    <input type="date" id="flight-return" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="flight-passengers">
+                                        <i class="fas fa-users"></i>
+                                        Passengers
+                                    </label>
+                                    <select id="flight-passengers" class="form-input">
+                                        <option>1 Adult</option>
+                                        <option>2 Adults</option>
+                                        <option>3 Adults</option>
+                                        <option>4 Adults</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="flight-class">
+                                        <i class="fas fa-crown"></i>
+                                        Class
+                                    </label>
+                                    <select id="flight-class" class="form-input">
+                                        <option>Economy</option>
+                                        <option>Premium Economy</option>
+                                        <option>Business</option>
+                                        <option>First Class</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-search">
+                                <i class="fas fa-search"></i>
+                                Search Flights
+                            </button>
+                        </form>
+
+                        <!-- Hotels Search Form -->
+                        <form class="search-form" id="hotels-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="hotel-destination">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Destination
+                                    </label>
+                                    <input type="text" id="hotel-destination" placeholder="City, Hotel, or Area" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="hotel-checkin">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        Check-in
+                                    </label>
+                                    <input type="date" id="hotel-checkin" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="hotel-checkout">
+                                        <i class="fas fa-calendar-check"></i>
+                                        Check-out
+                                    </label>
+                                    <input type="date" id="hotel-checkout" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="hotel-rooms">
+                                        <i class="fas fa-bed"></i>
+                                        Rooms
+                                    </label>
+                                    <select id="hotel-rooms" class="form-input">
+                                        <option>1 Room</option>
+                                        <option>2 Rooms</option>
+                                        <option>3 Rooms</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hotel-guests">
+                                        <i class="fas fa-user-friends"></i>
+                                        Guests
+                                    </label>
+                                    <select id="hotel-guests" class="form-input">
+                                        <option>1 Guest</option>
+                                        <option>2 Guests</option>
+                                        <option>3 Guests</option>
+                                        <option>4 Guests</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-search">
+                                <i class="fas fa-search"></i>
+                                Search Hotels
+                            </button>
+                        </form>
+                    </div>
+                </section>
+                <!-- Holiday Packages Section -->
+                <section class="holiday-packages">
+                    <div class="container">
+                        <!-- International Holiday Packages -->
+                        <div class="package-section">
+                            <div class="section-header">
+                                <h2 class="section-title">International Holiday Packages</h2>
+                                <p class="section-description">
+                                    Whether it's your first international trip or you have travelled abroad multiple times, 
+                                    planning a holiday to a distant land is always a special... 
+                                    <a href="#" class="read-more">read more</a>
+                                </p>
+                            </div>
+                            
+                            <div class="packages-grid">
+                                <!-- Europe For All -->
+                                <div class="package-card">
+                                    <div class="package-image">
+                                        <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Europe For All">
+                                        <div class="package-overlay"></div>
+                                    </div>
+                                    <div class="package-content">
+                                        <h3 class="package-title">Europe For All</h3>
+                                        <div class="package-price">
+                                            <span class="price-amount">₹60,600.00</span>
+                                            <span class="price-label">Starting Price</span>
+                                        </div>
+                                        <button class="btn-package">
+                                            <i class="fas fa-arrow-right"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                
+                                <!-- Highlights of Thailand -->
+                                <div class="package-card">
+                                    <div class="package-image">
+                                        <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Highlights of Thailand">
+                                        <div class="package-overlay"></div>
+                                    </div>
+                                    <div class="package-content">
+                                        <h3 class="package-title">Highlights of Thailand</h3>
+                                        <div class="package-price">
+                                            <span class="price-amount">₹71,900.00</span>
+                                            <span class="price-label">Starting Price</span>
+                                        </div>
+                                        <button class="btn-package">
+                                            <i class="fas fa-arrow-right"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                
+                                <!-- Asian Dhamaka -->
+                                <div class="package-card">
+                                    <div class="package-image">
+                                        <img src="https://images.unsplash.com/photo-1534008757030-27299c4371b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Asian Dhamaka">
+                                        <div class="package-overlay"></div>
+                                    </div>
+                                    <div class="package-content">
+                                        <h3 class="package-title">Asian Dhamaka</h3>
+                                        <div class="package-price">
+                                            <span class="price-amount">₹84,800.00</span>
+                                            <span class="price-label">Starting Price</span>
+                                        </div>
+                                        <button class="btn-package">
+                                            <i class="fas fa-arrow-right"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                
+                                <!-- Amazing Australia -->
+                                <div class="package-card">
+                                    <div class="package-image">
+                                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Amazing Australia">
+                                        <div class="package-overlay"></div>
+                                    </div>
+                                    <div class="package-content">
+                                        <h3 class="package-title">Amazing Australia</h3>
+                                        <div class="package-price">
+                                            <span class="price-amount">₹49,700.00</span>
+                                            <span class="price-label">Starting Price</span>
+                                        </div>
+                                        <button class="btn-package">
+                                            <i class="fas fa-arrow-right"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- India & Around Holiday Packages -->
+                        <div class="package-section">
+                            <div class="section-header">
+                                <h2 class="section-title">India & Around Holiday Packages</h2>
+                                <p class="section-description">
+                                    Travelling abroad for a holiday is a great thing but there isn't anything that beats 
+                                    the diversity of landscapes and cultures in India. We inspire... 
+                                    <a href="#" class="read-more">read more</a>
+                                </p>
+                            </div>
+                            
+                            <div class="packages-grid">
+                                <!-- Andaman Fully Loaded -->
+                                <div class="package-card">
+                                    <div class="package-image">
+                                        <img src="https://images.unsplash.com/photo-1591824438703-22af2c6d0fa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Andaman Fully Loaded">
+                                        <div class="package-overlay"></div>
+                                    </div>
+                                    <div class="package-content">
+                                        <h3 class="package-title">Andaman Fully Loaded</h3>
+                                        <div class="package-price">
+                                            <span class="price-amount">₹39,000.00</span>
+                                            <span class="price-label">Starting Price</span>
+                                        </div>
+                                        <button class="btn-package">
+                                            <i class="fas fa-arrow-right"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                
+                                <!-- Kerala Delight -->
+                                <div class="package-card">
+                                    <div class="package-image">
+                                        <img src="https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kerala Delight">
+                                        <div class="package-overlay"></div>
+                                    </div>
+                                    <div class="package-content">
+                                        <h3 class="package-title">Kerala Delight</h3>
+                                        <div class="package-price">
+                                            <span class="price-amount">₹32,000.00</span>
+                                            <span class="price-label">Starting Price</span>
+                                        </div>
+                                        <button class="btn-package">
+                                            <i class="fas fa-arrow-right"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                
+                                <!-- Best of Rajasthan -->
+                                <div class="package-card">
+                                    <div class="package-image">
+                                        <img src="https://images.unsplash.com/photo-1533575770077-052fa2c609fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Best of Rajasthan">
+                                        <div class="package-overlay"></div>
+                                    </div>
+                                    <div class="package-content">
+                                        <h3 class="package-title">Best of Rajasthan</h3>
+                                        <div class="package-price">
+                                            <span class="price-amount">₹47,000.00</span>
+                                            <span class="price-label">Starting Price</span>
+                                        </div>
+                                        <button class="btn-package">
+                                            <i class="fas fa-arrow-right"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                
+                                <!-- Assam & Meghalaya -->
+                                <div class="package-card">
+                                    <div class="package-image">
+                                        <img src="https://images.unsplash.com/photo-1587478225193-858a867d0b91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Assam & Meghalaya">
+                                        <div class="package-overlay"></div>
+                                    </div>
+                                    <div class="package-content">
+                                        <h3 class="package-title">Assam & Meghalaya</h3>
+                                        <div class="package-price">
+                                            <span class="price-amount">₹48,000.00</span>
+                                            <span class="price-label">Starting Price</span>
+                                        </div>
+                                        <button class="btn-package">
+                                            <i class="fas fa-arrow-right"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Honeymoon Holiday Packages -->
+                        <div class="package-section">
+                            <div class="section-header">
+                                <h2 class="section-title">Honeymoon Holiday Packages</h2>
+                                <p class="section-description">
+                                    Whether you are planning your honeymoon in scenic Kashmir or picturesque Switzerland, 
+                                    YBL TOURS's honeymoon packages are tailor-made for... 
+                                    <a href="#" class="read-more">read more</a>
+                                </p>
+                            </div>
+                            
+                            <div class="packages-grid">
+                                <!-- Bali -->
+                                <div class="package-card">
+                                    <div class="package-image">
+                                        <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Bali Honeymoon">
+                                        <div class="package-overlay"></div>
+                                        <div class="package-badge">Romantic</div>
+                                    </div>
+                                    <div class="package-content">
+                                        <h3 class="package-title">Bali</h3>
+                                        <p class="package-subtitle">Honeymoon Packages</p>
+                                        <div class="package-price">
+                                            <span class="price-amount">₹19,400.00</span>
+                                            <span class="price-label">Starting Price</span>
+                                        </div>
+                                        <button class="btn-package">
+                                            <i class="fas fa-arrow-right"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                
+                                <!-- Kerala -->
+                                <div class="package-card">
+                                    <div class="package-image">
+                                        <img src="https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kerala Honeymoon">
+                                        <div class="package-overlay"></div>
+                                        <div class="package-badge">Romantic</div>
+                                    </div>
+                                    <div class="package-content">
+                                        <h3 class="package-title">Kerala</h3>
+                                        <p class="package-subtitle">Honeymoon Packages</p>
+                                        <div class="package-price">
+                                            <span class="price-amount">₹49,900.00</span>
+                                            <span class="price-label">Starting Price</span>
+                                        </div>
+                                        <button class="btn-package">
+                                            <i class="fas fa-arrow-right"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                
+                                <!-- Vietnam -->
+                                <div class="package-card">
+                                    <div class="package-image">
+                                        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Vietnam Honeymoon">
+                                        <div class="package-overlay"></div>
+                                        <div class="package-badge">Romantic</div>
+                                    </div>
+                                    <div class="package-content">
+                                        <h3 class="package-title">Vietnam</h3>
+                                        <p class="package-subtitle">Honeymoon Packages</p>
+                                        <div class="package-price">
+                                            <span class="price-amount">₹38,600.00</span>
+                                            <span class="price-label">Starting Price</span>
+                                        </div>
+                                        <button class="btn-package">
+                                            <i class="fas fa-arrow-right"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                
+                                <!-- Andaman -->
+                                <div class="package-card">
+                                    <div class="package-image">
+                                        <img src="https://images.unsplash.com/photo-1591824438703-22af2c6d0fa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Andaman Honeymoon">
+                                        <div class="package-overlay"></div>
+                                        <div class="package-badge">Romantic</div>
+                                    </div>
+                                    <div class="package-content">
+                                        <h3 class="package-title">Andaman</h3>
+                                        <p class="package-subtitle">Honeymoon Packages</p>
+                                        <div class="package-price">
+                                            <span class="price-amount">₹53,400.00</span>
+                                            <span class="price-label">Starting Price</span>
+                                        </div>
+                                        <button class="btn-package">
+                                            <i class="fas fa-arrow-right"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- YBL TOURS Specials -->
+                        <div class="package-section">
+                            <div class="section-header">
+                                <h2 class="section-title">YBL TOURS Specials</h2>
+                                <p class="section-description">
+                                    Watch the beauty of India and the World through a different lens! Begin your next adventure 
+                                    now only with YBL TOURS Special Tour Packages. The... 
+                                    <a href="#" class="read-more">read more</a>
+                                </p>
+                            </div>
+                            
+                            <div class="packages-grid">
+                                <!-- Rann of Kutch -->
+                                <div class="package-card">
+                                    <div class="package-image">
+                                        <img src="https://images.unsplash.com/photo-1587478225193-858a867d0b91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Rann of Kutch">
+                                        <div class="package-overlay"></div>
+                                        <div class="package-badge">Special</div>
+                                    </div>
+                                    <div class="package-content">
+                                        <h3 class="package-title">Rann of Kutch</h3>
+                                        <div class="package-price">
+                                            <span class="price-amount">₹17,300.00</span>
+                                            <span class="price-label">Starting From</span>
+                                        </div>
+                                        <button class="btn-package">
+                                            <i class="fas fa-arrow-right"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                
+                                <!-- Japan -->
+                                <div class="package-card">
+                                    <div class="package-image">
+                                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Japan Cherry Blossom">
+                                        <div class="package-overlay"></div>
+                                        <div class="package-badge">Special</div>
+                                    </div>
+                                    <div class="package-content">
+                                        <h3 class="package-title">Japan</h3>
+                                        <p class="package-subtitle">Cherry Blossom</p>
+                                        <div class="package-price">
+                                            <span class="price-amount">₹2,84,500.00</span>
+                                            <span class="price-label">Starting From</span>
+                                        </div>
+                                        <button class="btn-package">
+                                            <i class="fas fa-arrow-right"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                
+                                <!-- Spiritual -->
+                                <div class="package-card">
+                                    <div class="package-image">
+                                        <img src="https://images.unsplash.com/photo-1587132137056-4c6e38f6809b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Spiritual Tour">
+                                        <div class="package-overlay"></div>
+                                        <div class="package-badge">Special</div>
+                                    </div>
+                                    <div class="package-content">
+                                        <h3 class="package-title">Spiritual</h3>
+                                        <p class="package-subtitle">Tour Packages</p>
+                                        <div class="package-price">
+                                            <span class="price-amount">₹12,100.00</span>
+                                            <span class="price-label">Starting From</span>
+                                        </div>
+                                        <button class="btn-package">
+                                            <i class="fas fa-arrow-right"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                
+                                <!-- International -->
+                                <div class="package-card">
+                                    <div class="package-image">
+                                        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="International Tour">
+                                        <div class="package-overlay"></div>
+                                        <div class="package-badge">Special</div>
+                                    </div>
+                                    <div class="package-content">
+                                        <h3 class="package-title">International</h3>
+                                        <p class="package-subtitle">Tour Packages</p>
+                                        <div class="package-price">
+                                            <span class="price-amount">₹37,200.00</span>
+                                            <span class="price-label">Starting From</span>
+                                        </div>
+                                        <button class="btn-package">
+                                            <i class="fas fa-arrow-right"></i>
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- AI Assistant Widget -->
+<div class="ai-assistant">
+    <div class="ai-toggle">
+        <i class="fas fa-robot"></i>
+        <div class="ai-pulse"></div>
+    </div>
+    <div class="ai-chat-window">
+        <div class="ai-header">
+            <div class="ai-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="ai-info">
+                <h4>Hi, I'm Uma!</h4>
+                <p>Your AI Assistant</p>
+                <div class="ai-status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+            </div>
+            <button class="ai-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="ai-messages">
+            <div class="ai-message">
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <p>Hello! I'm Uma, your AI travel assistant. I can help you find perfect holiday packages, compare prices, check availability, and answer all your travel questions. How can I assist you today? 😊</p>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+            
+            <!-- Quick Suggestions -->
+            <div class="quick-suggestions">
+                <p>Quick questions you can ask:</p>
+                <div class="suggestion-chips">
+                    <button class="suggestion-chip" data-question="Show me best Europe packages">Europe Packages</button>
+                    <button class="suggestion-chip" data-question="What are honeymoon destinations?">Honeymoon Ideas</button>
+                    <button class="suggestion-chip" data-question="Best time to visit Thailand">Travel Tips</button>
+                    <button class="suggestion-chip" data-question="Current offers and deals">Special Offers</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ai-input-container">
+            <div class="ai-input">
+                <input type="text" placeholder="Ask me about packages, destinations, or deals..." id="ai-chat-input">
+                <button class="ai-send" id="ai-send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <div class="ai-disclaimer">
+                <small>Powered by DeepSeek AI • I can help with travel planning</small>
+            </div>
+        </div>
+    </div>
+</div> 
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section class="featured-destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Destinations</h2>
+                <p class="section-subtitle">Discover the world's most amazing places</p>
+            </div>
+            
+            <div class="destinations-grid">
+                <!-- USA -->
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="USA">
+                        <div class="card-overlay"></div>
+                        <div class="card-badge">Popular</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>United States</h3>
+                        <p>Explore the land of opportunities from coast to coast</p>
+                        <div class="card-meta">
+                            <span class="price">From $999</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <button class="btn-explore">
+                            <i class="fas fa-arrow-right"></i>
+                            Explore Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Europe -->
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Europe">
+                        <div class="card-overlay"></div>
+                        <div class="card-badge">Best Seller</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Europe</h3>
+                        <p>Discover historic wonders and cultural treasures</p>
+                        <div class="card-meta">
+                            <span class="price">From $799</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        <button class="btn-explore">
+                            <i class="fas fa-arrow-right"></i>
+                            Explore Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Australia -->
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Australia">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Australia</h3>
+                        <p>Experience the land down under's natural wonders</p>
+                        <div class="card-meta">
+                            <span class="price">From $1299</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                        <button class="btn-explore">
+                            <i class="fas fa-arrow-right"></i>
+                            Explore Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="images/logo.png" alt="YBL TOURS" class="logo-image">
+                        </div>
+                        <p class="footer-description">
+                            Your trusted travel partner for unforgettable experiences worldwide. Creating memories that last a lifetime.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="pages/destinations.html"><i class="fas fa-chevron-right"></i> Destinations</a></li>
+                        <li><a href="pages/flights.html"><i class="fas fa-chevron-right"></i> Flights</a></li>
+                        <li><a href="pages/hotels.html"><i class="fas fa-chevron-right"></i> Hotels</a></li>
+                        <li><a href="pages/tours.html"><i class="fas fa-chevron-right"></i> Tours</a></li>
+                        <li><a href="pages/contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Our Team</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQs</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Booking Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">+91 9953727872,+91-9250716847</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">info@ybltours.com</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <span class="contact-label">Address</span>
+                                <span class="contact-value">184 Street 4,ground floor Darshan vihar, Delhi 110084</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <span class="contact-label">Business Hours</span>
+                                <span class="contact-value">Mon - Sun: 24/7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <div class="newsletter">
+                        <p class="newsletter-text">Subscribe to get special offers, free giveaways, and travel deals.</p>
+                        <form class="newsletter-form">
+                            <div class="input-group">
+                                <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                                <button type="submit" class="newsletter-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="payment-methods">
+                            <p class="payment-text">We Accept:</p>
+                            <div class="payment-icons">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fab fa-cc-paypal"></i>
+                                <i class="fab fa-cc-apple-pay"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2015 <strong>YBL TOURS</strong>. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #e74c3c;"></i> for travelers</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <span class="separator">|</span>
+                        <a href="#">Terms of Service</a>
+                        <span class="separator">|</span>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/search.js"></script>
+    <script src="scripts/ai-assistant.js"></script>
+</body>
+</html>

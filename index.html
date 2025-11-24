@@ -16,7 +16,7 @@
         <div class="container">
             <div class="top-header-content">
                 <div class="header-contact">
-                    <span><i class="fas fa-phone"></i> +1 (555) 123-4567</span>
+                    <span><i class="fas fa-phone"></i> +1800 255 255</span>
                     <span><i class="fas fa-envelope"></i> info@ybltours.com</span>
                 </div>
                 <div class="header-actions">
@@ -105,8 +105,8 @@
             <div class="promo-content">
                 <div class="promo-text">
                     <span class="promo-badge">EUROPE</span>
-                    <h3>No one knows it better than YBL TOURS</h3>
-                    <p>Holidays Starting <strong>@ ₹ 1,62,500.00</strong></p>
+                    <h3>Nobody understands your holiday dreams like YBL Tours</h3>
+                    <p>Holidays Starting <strong>@ ₹ 1,59,500.00</strong></p>
                 </div>
                 <div class="promo-actions">
                     <button class="btn-promo">Book Now</button>
@@ -169,27 +169,100 @@
                                         <i class="fas fa-calendar-alt"></i>
                                         Departure
                                     </label>
-                                    <input type="date" id="flight-depart" class="form-input">
+                                    <div class="custom-date-input">
+                                        <input type="text" id="flight-depart" class="form-input date-display" placeholder="Select date" readonly>
+                                        <i class="fas fa-calendar calendar-icon"></i>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="flight-return">
                                         <i class="fas fa-calendar-check"></i>
                                         Return
                                     </label>
-                                    <input type="date" id="flight-return" class="form-input">
+                                    <div class="custom-date-input">
+                                        <input type="text" id="flight-return" class="form-input date-display" placeholder="Select date" readonly>
+                                        <i class="fas fa-calendar calendar-icon"></i>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="flight-passengers">
-                                        <i class="fas fa-users"></i>
-                                        Passengers
-                                    </label>
-                                    <select id="flight-passengers" class="form-input">
-                                        <option>1 Adult</option>
-                                        <option>2 Adults</option>
-                                        <option>3 Adults</option>
-                                        <option>4 Adults</option>
-                                    </select>
-                                </div>
+                                <!-- Passengers -->
+<div class="form-group">
+    <label for="passengers">
+        <i class="fas fa-users"></i>
+        Passengers
+    </label>
+    <div class="passenger-selector">
+        <input type="text" id="passenger-display" class="form-input passenger-display" 
+               value="1 Adult" readonly placeholder="Select Passengers">
+        <i class="fas fa-chevron-down passenger-dropdown-icon"></i>
+        
+        <!-- Passenger Dropdown -->
+        <div class="passenger-dropdown" id="passengerDropdown">
+            <div class="passenger-category">
+                <div class="passenger-info">
+                    <div class="passenger-type">
+                        <strong>Adults</strong>
+                        <span class="age-info">12+ years</span>
+                    </div>
+                </div>
+                <div class="passenger-controls">
+                    <button type="button" class="passenger-btn minus-btn" data-type="adults">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <span class="passenger-count" id="adults-count">1</span>
+                    <button type="button" class="passenger-btn plus-btn" data-type="adults">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="passenger-category">
+                <div class="passenger-info">
+                    <div class="passenger-type">
+                        <strong>Children</strong>
+                        <span class="age-info">2-11 years</span>
+                    </div>
+                </div>
+                <div class="passenger-controls">
+                    <button type="button" class="passenger-btn minus-btn" data-type="children">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <span class="passenger-count" id="children-count">0</span>
+                    <button type="button" class="passenger-btn plus-btn" data-type="children">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="passenger-category">
+                <div class="passenger-info">
+                    <div class="passenger-type">
+                        <strong>Infants</strong>
+                        <span class="age-info">Under 2 years</span>
+                    </div>
+                    <div class="passenger-note">(1 infant per adult)</div>
+                </div>
+                <div class="passenger-controls">
+                    <button type="button" class="passenger-btn minus-btn" data-type="infants">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <span class="passenger-count" id="infants-count">0</span>
+                    <button type="button" class="passenger-btn plus-btn" data-type="infants">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="passenger-total">
+                <strong>Total Passengers: <span id="total-passengers">1</span></strong>
+            </div>
+
+            <div class="passenger-actions">
+                <button type="button" class="btn-cancel" id="passengerCancel">Cancel</button>
+                <button type="button" class="btn-apply" id="passengerApply">Apply</button>
+            </div>
+        </div>
+    </div>
+</div>
                                 <div class="form-group">
                                     <label for="flight-class">
                                         <i class="fas fa-crown"></i>
@@ -263,451 +336,857 @@
                             </button>
                         </form>
                     </div>
-                </section>
-                <!-- Holiday Packages Section -->
-                <section class="holiday-packages">
-                    <div class="container">
-                        <!-- International Holiday Packages -->
-                        <div class="package-section">
-                            <div class="section-header">
-                                <h2 class="section-title">International Holiday Packages</h2>
-                                <p class="section-description">
-                                    Whether it's your first international trip or you have travelled abroad multiple times, 
-                                    planning a holiday to a distant land is always a special... 
-                                    <a href="#" class="read-more">read more</a>
-                                </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Holiday Packages Section -->
+    <section class="holiday-packages">
+        <div class="container">
+            <!-- International Holiday Packages with Slider -->
+<div class="package-section">
+    <div class="section-header">
+        <h2 class="section-title">International Holiday Packages</h2>
+        <div class="section-description">
+            <p class="description-text short-text">
+                Whether it's your first international trip or you have travelled abroad multiple times, planning a holiday to a distant land is always a special... 
+                <a href="#" class="read-more">read more</a>
+            </p>
+            <p class="description-text full-text" style="display: none;">
+                Whether it's your first international trip or you have travelled abroad multiple times, planning a holiday to a distant land is always a special feeling. Our international holiday packages are well-made and hold a high reputation among customers who have been travelling with us. Here, take a look at our top international holiday packages.
+                <a href="#" class="read-less">read less</a>
+            </p>
+        </div>
+    </div>
+                
+                <!-- Slider Container -->
+                <div class="slider-container">
+                    <div class="packages-slider" id="internationalSlider">
+                        <!-- European Wonders -->
+                        <div class="package-card">
+                            <div class="package-image">
+                                <img src="https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="European Wonders">
+                                <div class="package-overlay"></div>
+                                <div class="package-badge">Popular</div>
                             </div>
-                            
-                            <div class="packages-grid">
-                                <!-- Europe For All -->
-                                <div class="package-card">
-                                    <div class="package-image">
-                                        <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Europe For All">
-                                        <div class="package-overlay"></div>
-                                    </div>
-                                    <div class="package-content">
-                                        <h3 class="package-title">Europe For All</h3>
-                                        <div class="package-price">
-                                            <span class="price-amount">₹60,600.00</span>
-                                            <span class="price-label">Starting Price</span>
-                                        </div>
-                                        <button class="btn-package">
-                                            <i class="fas fa-arrow-right"></i>
-                                            View Details
-                                        </button>
-                                    </div>
+                            <div class="package-content">
+                                <h3 class="package-title">European Wonders</h3>
+                                <p class="package-duration">10 Days / 9 Nights</p>
+                                <div class="package-price">
+                                    <span class="price-amount">₹60,600.00</span>
+                                    <span class="price-label">Starting Price</span>
                                 </div>
-                
-                                <!-- Highlights of Thailand -->
-                                <div class="package-card">
-                                    <div class="package-image">
-                                        <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Highlights of Thailand">
-                                        <div class="package-overlay"></div>
-                                    </div>
-                                    <div class="package-content">
-                                        <h3 class="package-title">Highlights of Thailand</h3>
-                                        <div class="package-price">
-                                            <span class="price-amount">₹71,900.00</span>
-                                            <span class="price-label">Starting Price</span>
-                                        </div>
-                                        <button class="btn-package">
-                                            <i class="fas fa-arrow-right"></i>
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                
-                                <!-- Asian Dhamaka -->
-                                <div class="package-card">
-                                    <div class="package-image">
-                                        <img src="https://images.unsplash.com/photo-1534008757030-27299c4371b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Asian Dhamaka">
-                                        <div class="package-overlay"></div>
-                                    </div>
-                                    <div class="package-content">
-                                        <h3 class="package-title">Asian Dhamaka</h3>
-                                        <div class="package-price">
-                                            <span class="price-amount">₹84,800.00</span>
-                                            <span class="price-label">Starting Price</span>
-                                        </div>
-                                        <button class="btn-package">
-                                            <i class="fas fa-arrow-right"></i>
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                
-                                <!-- Amazing Australia -->
-                                <div class="package-card">
-                                    <div class="package-image">
-                                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Amazing Australia">
-                                        <div class="package-overlay"></div>
-                                    </div>
-                                    <div class="package-content">
-                                        <h3 class="package-title">Amazing Australia</h3>
-                                        <div class="package-price">
-                                            <span class="price-amount">₹49,700.00</span>
-                                            <span class="price-label">Starting Price</span>
-                                        </div>
-                                        <button class="btn-package">
-                                            <i class="fas fa-arrow-right"></i>
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
+                                <ul class="package-features">
+                                    <li><i class="fas fa-check"></i> 4-star Hotels</li>
+                                    <li><i class="fas fa-check"></i> Daily Breakfast</li>
+                                    <li><i class="fas fa-check"></i> Guided Tours</li>
+                                </ul>
+                                <button class="btn-package">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Details
+                                </button>
                             </div>
                         </div>
-                
-                        <!-- India & Around Holiday Packages -->
-                        <div class="package-section">
-                            <div class="section-header">
-                                <h2 class="section-title">India & Around Holiday Packages</h2>
-                                <p class="section-description">
-                                    Travelling abroad for a holiday is a great thing but there isn't anything that beats 
-                                    the diversity of landscapes and cultures in India. We inspire... 
-                                    <a href="#" class="read-more">read more</a>
-                                </p>
+
+                        <!-- Thai Paradise -->
+                        <div class="package-card">
+                            <div class="package-image">
+                                <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Thai Paradise">
+                                <div class="package-overlay"></div>
+                                <div class="package-badge">Best Seller</div>
                             </div>
-                            
-                            <div class="packages-grid">
-                                <!-- Andaman Fully Loaded -->
-                                <div class="package-card">
-                                    <div class="package-image">
-                                        <img src="https://images.unsplash.com/photo-1591824438703-22af2c6d0fa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Andaman Fully Loaded">
-                                        <div class="package-overlay"></div>
-                                    </div>
-                                    <div class="package-content">
-                                        <h3 class="package-title">Andaman Fully Loaded</h3>
-                                        <div class="package-price">
-                                            <span class="price-amount">₹39,000.00</span>
-                                            <span class="price-label">Starting Price</span>
-                                        </div>
-                                        <button class="btn-package">
-                                            <i class="fas fa-arrow-right"></i>
-                                            View Details
-                                        </button>
-                                    </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Thai Paradise</h3>
+                                <p class="package-duration">8 Days / 7 Nights</p>
+                                <div class="package-price">
+                                    <span class="price-amount">₹71,900.00</span>
+                                    <span class="price-label">Starting Price</span>
                                 </div>
-                
-                                <!-- Kerala Delight -->
-                                <div class="package-card">
-                                    <div class="package-image">
-                                        <img src="https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kerala Delight">
-                                        <div class="package-overlay"></div>
-                                    </div>
-                                    <div class="package-content">
-                                        <h3 class="package-title">Kerala Delight</h3>
-                                        <div class="package-price">
-                                            <span class="price-amount">₹32,000.00</span>
-                                            <span class="price-label">Starting Price</span>
-                                        </div>
-                                        <button class="btn-package">
-                                            <i class="fas fa-arrow-right"></i>
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                
-                                <!-- Best of Rajasthan -->
-                                <div class="package-card">
-                                    <div class="package-image">
-                                        <img src="https://images.unsplash.com/photo-1533575770077-052fa2c609fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Best of Rajasthan">
-                                        <div class="package-overlay"></div>
-                                    </div>
-                                    <div class="package-content">
-                                        <h3 class="package-title">Best of Rajasthan</h3>
-                                        <div class="package-price">
-                                            <span class="price-amount">₹47,000.00</span>
-                                            <span class="price-label">Starting Price</span>
-                                        </div>
-                                        <button class="btn-package">
-                                            <i class="fas fa-arrow-right"></i>
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                
-                                <!-- Assam & Meghalaya -->
-                                <div class="package-card">
-                                    <div class="package-image">
-                                        <img src="https://images.unsplash.com/photo-1587478225193-858a867d0b91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Assam & Meghalaya">
-                                        <div class="package-overlay"></div>
-                                    </div>
-                                    <div class="package-content">
-                                        <h3 class="package-title">Assam & Meghalaya</h3>
-                                        <div class="package-price">
-                                            <span class="price-amount">₹48,000.00</span>
-                                            <span class="price-label">Starting Price</span>
-                                        </div>
-                                        <button class="btn-package">
-                                            <i class="fas fa-arrow-right"></i>
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
+                                <ul class="package-features">
+                                    <li><i class="fas fa-check"></i> Luxury Resorts</li>
+                                    <li><i class="fas fa-check"></i> Island Hopping</li>
+                                    <li><i class="fas fa-check"></i> Spa Treatments</li>
+                                </ul>
+                                <button class="btn-package">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Details
+                                </button>
                             </div>
                         </div>
-                
-                        <!-- Honeymoon Holiday Packages -->
-                        <div class="package-section">
-                            <div class="section-header">
-                                <h2 class="section-title">Honeymoon Holiday Packages</h2>
-                                <p class="section-description">
-                                    Whether you are planning your honeymoon in scenic Kashmir or picturesque Switzerland, 
-                                    YBL TOURS's honeymoon packages are tailor-made for... 
-                                    <a href="#" class="read-more">read more</a>
-                                </p>
+
+                        <!-- Asian Explorer -->
+                        <div class="package-card">
+                            <div class="package-image">
+                                <img src="https://images.unsplash.com/photo-1534008757030-27299c4371b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Asian Explorer">
+                                <div class="package-overlay"></div>
                             </div>
-                            
-                            <div class="packages-grid">
-                                <!-- Bali -->
-                                <div class="package-card">
-                                    <div class="package-image">
-                                        <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Bali Honeymoon">
-                                        <div class="package-overlay"></div>
-                                        <div class="package-badge">Romantic</div>
-                                    </div>
-                                    <div class="package-content">
-                                        <h3 class="package-title">Bali</h3>
-                                        <p class="package-subtitle">Honeymoon Packages</p>
-                                        <div class="package-price">
-                                            <span class="price-amount">₹19,400.00</span>
-                                            <span class="price-label">Starting Price</span>
-                                        </div>
-                                        <button class="btn-package">
-                                            <i class="fas fa-arrow-right"></i>
-                                            View Details
-                                        </button>
-                                    </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Asian Explorer</h3>
+                                <p class="package-duration">12 Days / 11 Nights</p>
+                                <div class="package-price">
+                                    <span class="price-amount">₹84,800.00</span>
+                                    <span class="price-label">Starting Price</span>
                                 </div>
-                
-                                <!-- Kerala -->
-                                <div class="package-card">
-                                    <div class="package-image">
-                                        <img src="https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kerala Honeymoon">
-                                        <div class="package-overlay"></div>
-                                        <div class="package-badge">Romantic</div>
-                                    </div>
-                                    <div class="package-content">
-                                        <h3 class="package-title">Kerala</h3>
-                                        <p class="package-subtitle">Honeymoon Packages</p>
-                                        <div class="package-price">
-                                            <span class="price-amount">₹49,900.00</span>
-                                            <span class="price-label">Starting Price</span>
-                                        </div>
-                                        <button class="btn-package">
-                                            <i class="fas fa-arrow-right"></i>
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                
-                                <!-- Vietnam -->
-                                <div class="package-card">
-                                    <div class="package-image">
-                                        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Vietnam Honeymoon">
-                                        <div class="package-overlay"></div>
-                                        <div class="package-badge">Romantic</div>
-                                    </div>
-                                    <div class="package-content">
-                                        <h3 class="package-title">Vietnam</h3>
-                                        <p class="package-subtitle">Honeymoon Packages</p>
-                                        <div class="package-price">
-                                            <span class="price-amount">₹38,600.00</span>
-                                            <span class="price-label">Starting Price</span>
-                                        </div>
-                                        <button class="btn-package">
-                                            <i class="fas fa-arrow-right"></i>
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                
-                                <!-- Andaman -->
-                                <div class="package-card">
-                                    <div class="package-image">
-                                        <img src="https://images.unsplash.com/photo-1591824438703-22af2c6d0fa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Andaman Honeymoon">
-                                        <div class="package-overlay"></div>
-                                        <div class="package-badge">Romantic</div>
-                                    </div>
-                                    <div class="package-content">
-                                        <h3 class="package-title">Andaman</h3>
-                                        <p class="package-subtitle">Honeymoon Packages</p>
-                                        <div class="package-price">
-                                            <span class="price-amount">₹53,400.00</span>
-                                            <span class="price-label">Starting Price</span>
-                                        </div>
-                                        <button class="btn-package">
-                                            <i class="fas fa-arrow-right"></i>
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
+                                <ul class="package-features">
+                                    <li><i class="fas fa-check"></i> Multi-Country</li>
+                                    <li><i class="fas fa-check"></i> Cultural Tours</li>
+                                    <li><i class="fas fa-check"></i> Local Guides</li>
+                                </ul>
+                                <button class="btn-package">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Details
+                                </button>
                             </div>
                         </div>
-                
-                        <!-- YBL TOURS Specials -->
-                        <div class="package-section">
-                            <div class="section-header">
-                                <h2 class="section-title">YBL TOURS Specials</h2>
-                                <p class="section-description">
-                                    Watch the beauty of India and the World through a different lens! Begin your next adventure 
-                                    now only with YBL TOURS Special Tour Packages. The... 
-                                    <a href="#" class="read-more">read more</a>
-                                </p>
+
+                        <!-- Japan Discovery -->
+                        <div class="package-card">
+                            <div class="package-image">
+                                <img src="https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Japan Discovery">
+                                <div class="package-overlay"></div>
+                                <div class="package-badge">New</div>
                             </div>
-                            
-                            <div class="packages-grid">
-                                <!-- Rann of Kutch -->
-                                <div class="package-card">
-                                    <div class="package-image">
-                                        <img src="https://images.unsplash.com/photo-1587478225193-858a867d0b91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Rann of Kutch">
-                                        <div class="package-overlay"></div>
-                                        <div class="package-badge">Special</div>
-                                    </div>
-                                    <div class="package-content">
-                                        <h3 class="package-title">Rann of Kutch</h3>
-                                        <div class="package-price">
-                                            <span class="price-amount">₹17,300.00</span>
-                                            <span class="price-label">Starting From</span>
-                                        </div>
-                                        <button class="btn-package">
-                                            <i class="fas fa-arrow-right"></i>
-                                            View Details
-                                        </button>
-                                    </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Japan Discovery</h3>
+                                <p class="package-duration">9 Days / 8 Nights</p>
+                                <div class="package-price">
+                                    <span class="price-amount">₹92,500.00</span>
+                                    <span class="price-label">Starting Price</span>
                                 </div>
-                
-                                <!-- Japan -->
-                                <div class="package-card">
-                                    <div class="package-image">
-                                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Japan Cherry Blossom">
-                                        <div class="package-overlay"></div>
-                                        <div class="package-badge">Special</div>
-                                    </div>
-                                    <div class="package-content">
-                                        <h3 class="package-title">Japan</h3>
-                                        <p class="package-subtitle">Cherry Blossom</p>
-                                        <div class="package-price">
-                                            <span class="price-amount">₹2,84,500.00</span>
-                                            <span class="price-label">Starting From</span>
-                                        </div>
-                                        <button class="btn-package">
-                                            <i class="fas fa-arrow-right"></i>
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                
-                                <!-- Spiritual -->
-                                <div class="package-card">
-                                    <div class="package-image">
-                                        <img src="https://images.unsplash.com/photo-1587132137056-4c6e38f6809b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Spiritual Tour">
-                                        <div class="package-overlay"></div>
-                                        <div class="package-badge">Special</div>
-                                    </div>
-                                    <div class="package-content">
-                                        <h3 class="package-title">Spiritual</h3>
-                                        <p class="package-subtitle">Tour Packages</p>
-                                        <div class="package-price">
-                                            <span class="price-amount">₹12,100.00</span>
-                                            <span class="price-label">Starting From</span>
-                                        </div>
-                                        <button class="btn-package">
-                                            <i class="fas fa-arrow-right"></i>
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                
-                                <!-- International -->
-                                <div class="package-card">
-                                    <div class="package-image">
-                                        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="International Tour">
-                                        <div class="package-overlay"></div>
-                                        <div class="package-badge">Special</div>
-                                    </div>
-                                    <div class="package-content">
-                                        <h3 class="package-title">International</h3>
-                                        <p class="package-subtitle">Tour Packages</p>
-                                        <div class="package-price">
-                                            <span class="price-amount">₹37,200.00</span>
-                                            <span class="price-label">Starting From</span>
-                                        </div>
-                                        <button class="btn-package">
-                                            <i class="fas fa-arrow-right"></i>
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
+                                <ul class="package-features">
+                                    <li><i class="fas fa-check"></i> Ryokan Stay</li>
+                                    <li><i class="fas fa-check"></i> Bullet Train</li>
+                                    <li><i class="fas fa-check"></i> Tea Ceremony</li>
+                                </ul>
+                                <button class="btn-package">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Details
+                                </button>
                             </div>
+                        </div>
+
+                        <!-- Australian Adventure -->
+                        <div class="package-card">
+                            <div class="package-image">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Australian Adventure">
+                                <div class="package-overlay"></div>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Australian Adventure</h3>
+                                <p class="package-duration">14 Days / 13 Nights</p>
+                                <div class="package-price">
+                                    <span class="price-amount">₹1,05,400.00</span>
+                                    <span class="price-label">Starting Price</span>
+                                </div>
+                                <ul class="package-features">
+                                    <li><i class="fas fa-check"></i> Great Barrier Reef</li>
+                                    <li><i class="fas fa-check"></i> Outback Safari</li>
+                                    <li><i class="fas fa-check"></i> Wildlife Tours</li>
+                                </ul>
+                                <button class="btn-package">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- American Dream -->
+                        <div class="package-card">
+                            <div class="package-image">
+                                <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="American Dream">
+                                <div class="package-overlay"></div>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">American Dream</h3>
+                                <p class="package-duration">15 Days / 14 Nights</p>
+                                <div class="package-price">
+                                    <span class="price-amount">₹1,22,700.00</span>
+                                    <span class="price-label">Starting Price</span>
+                                </div>
+                                <ul class="package-features">
+                                    <li><i class="fas fa-check"></i> Coast to Coast</li>
+                                    <li><i class="fas fa-check"></i> National Parks</li>
+                                    <li><i class="fas fa-check"></i> City Tours</li>
+                                </ul>
+                                <button class="btn-package">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Navigation -->
+                    <div class="slider-controls">
+                        <button class="slider-btn prev-btn" id="internationalPrev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="slider-btn next-btn" id="internationalNext">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Slider Dots -->
+                    <div class="slider-dots" id="internationalDots">
+                        <!-- Dots will be generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- India & Around Holiday Packages with Slider -->
+<div class="package-section">
+    <div class="section-header">
+        <h2 class="section-title">India & Around Holiday Packages</h2>
+        <div class="section-description">
+            <p class="description-text short-text">
+                International trips are exciting, but India offers a richness of culture, nature, and adventure that no destination can match. Our India holiday packages are designed to help travellers explore the country's stunning diversity... 
+                <a href="#" class="read-more">read more</a>
+            </p>
+            <p class="description-text full-text" style="display: none;">
+                International trips are exciting, but India offers a richness of culture, nature, and adventure that no destination can match. Our India holiday packages are designed to help travellers explore the country's stunning diversity — from the majestic Himalayas and pristine beaches to heritage cities and wildlife escapes. Whether you're seeking spiritual enlightenment in Varanasi, royal experiences in Rajasthan, or tropical bliss in Andaman, our carefully crafted packages ensure an unforgettable journey through Incredible India.
+                <a href="#" class="read-less">read less</a>
+            </p>
+        </div>
+    </div>
+                
+                <!-- Slider Container -->
+                <div class="slider-container">
+                    <div class="packages-slider" id="domesticSlider">
+                        <!-- Andaman Bliss -->
+                        <div class="package-card">
+                            <div class="package-image">
+                                <img src="https://images.unsplash.com/photo-1591824438703-22af2c6d0fa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Andaman Bliss">
+                                <div class="package-overlay"></div>
+                                <div class="package-badge">Beach Paradise</div>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Andaman Bliss</h3>
+                                <p class="package-duration">6 Days / 5 Nights</p>
+                                <div class="package-price">
+                                    <span class="price-amount">₹39,000.00</span>
+                                    <span class="price-label">Starting Price</span>
+                                </div>
+                                <ul class="package-features">
+                                    <li><i class="fas fa-check"></i> Island Hopping</li>
+                                    <li><i class="fas fa-check"></i> Water Sports</li>
+                                    <li><i class="fas fa-check"></i> Beach Resorts</li>
+                                </ul>
+                                <button class="btn-package">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Kerala Backwaters -->
+                        <div class="package-card">
+                            <div class="package-image">
+                                <img src="https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kerala Backwaters">
+                                <div class="package-overlay"></div>
+                                <div class="package-badge">Nature's Bliss</div>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Kerala Backwaters</h3>
+                                <p class="package-duration">7 Days / 6 Nights</p>
+                                <div class="package-price">
+                                    <span class="price-amount">₹32,000.00</span>
+                                    <span class="price-label">Starting Price</span>
+                                </div>
+                                <ul class="package-features">
+                                    <li><i class="fas fa-check"></i> Houseboat Stay</li>
+                                    <li><i class="fas fa-check"></i> Ayurvedic Spa</li>
+                                    <li><i class="fas fa-check"></i> Tea Gardens</li>
+                                </ul>
+                                <button class="btn-package">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Rajasthan Royalty -->
+                        <div class="package-card">
+                            <div class="package-image">
+                                <img src="https://images.unsplash.com/photo-1533575770077-052fa2c609fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Rajasthan Royalty">
+                                <div class="package-overlay"></div>
+                                <div class="package-badge">Royal Heritage</div>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Rajasthan Royalty</h3>
+                                <p class="package-duration">8 Days / 7 Nights</p>
+                                <div class="package-price">
+                                    <span class="price-amount">₹47,000.00</span>
+                                    <span class="price-label">Starting Price</span>
+                                </div>
+                                <ul class="package-features">
+                                    <li><i class="fas fa-check"></i> Palace Hotels</li>
+                                    <li><i class="fas fa-check"></i> Desert Safari</li>
+                                    <li><i class="fas fa-check"></i> Cultural Shows</li>
+                                </ul>
+                                <button class="btn-package">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Himalayan Trek -->
+                        <div class="package-card">
+                            <div class="package-image">
+                                <img src="https://images.unsplash.com/photo-1587478225193-858a867d0b91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Himalayan Trek">
+                                <div class="package-overlay"></div>
+                                <div class="package-badge">Adventure</div>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Himalayan Trek</h3>
+                                <p class="package-duration">10 Days / 9 Nights</p>
+                                <div class="package-price">
+                                    <span class="price-amount">₹48,000.00</span>
+                                    <span class="price-label">Starting Price</span>
+                                </div>
+                                <ul class="package-features">
+                                    <li><i class="fas fa-check"></i> Mountain Trekking</li>
+                                    <li><i class="fas fa-check"></i> Camping</li>
+                                    <li><i class="fas fa-check"></i> Local Culture</li>
+                                </ul>
+                                <button class="btn-package">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Goa Beach Escape -->
+                        <div class="package-card">
+                            <div class="package-image">
+                                <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Goa Beach Escape">
+                                <div class="package-overlay"></div>
+                                <div class="package-badge">Party & Relax</div>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Goa Beach Escape</h3>
+                                <p class="package-duration">5 Days / 4 Nights</p>
+                                <div class="package-price">
+                                    <span class="price-amount">₹25,000.00</span>
+                                    <span class="price-label">Starting Price</span>
+                                </div>
+                                <ul class="package-features">
+                                    <li><i class="fas fa-check"></i> Beach Parties</li>
+                                    <li><i class="fas fa-check"></i> Water Sports</li>
+                                    <li><i class="fas fa-check"></i> Portuguese Heritage</li>
+                                </ul>
+                                <button class="btn-package">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Kashmir Paradise -->
+                        <div class="package-card">
+                            <div class="package-image">
+                                <img src="https://images.unsplash.com/photo-1570549180896-30f9c214b1c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kashmir Paradise">
+                                <div class="package-overlay"></div>
+                                <div class="package-badge">Heaven on Earth</div>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Kashmir Paradise</h3>
+                                <p class="package-duration">7 Days / 6 Nights</p>
+                                <div class="package-price">
+                                    <span class="price-amount">₹42,000.00</span>
+                                    <span class="price-label">Starting Price</span>
+                                </div>
+                                <ul class="package-features">
+                                    <li><i class="fas fa-check"></i> Dal Lake Stay</li>
+                                    <li><i class="fas fa-check"></i> Gulmarg Gondola</li>
+                                    <li><i class="fas fa-check"></i> Mughal Gardens</li>
+                                </ul>
+                                <button class="btn-package">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Varanasi Spiritual -->
+                        <div class="package-card">
+                            <div class="package-image">
+                                <img src="https://images.unsplash.com/photo-1587132137056-4c6e38f6809b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Varanasi Spiritual">
+                                <div class="package-overlay"></div>
+                                <div class="package-badge">Spiritual Journey</div>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Varanasi Spiritual</h3>
+                                <p class="package-duration">4 Days / 3 Nights</p>
+                                <div class="package-price">
+                                    <span class="price-amount">₹18,000.00</span>
+                                    <span class="price-label">Starting Price</span>
+                                </div>
+                                <ul class="package-features">
+                                    <li><i class="fas fa-check"></i> Ganga Aarti</li>
+                                    <li><i class="fas fa-check"></i> Temple Tours</li>
+                                    <li><i class="fas fa-check"></i> Yoga Sessions</li>
+                                </ul>
+                                <button class="btn-package">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Ladakh Adventure -->
+                        <div class="package-card">
+                            <div class="package-image">
+                                <img src="https://images.unsplash.com/photo-1587132137056-4c6e38f6809b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Ladakh Adventure">
+                                <div class="package-overlay"></div>
+                                <div class="package-badge">Extreme Adventure</div>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Ladakh Adventure</h3>
+                                <p class="package-duration">12 Days / 11 Nights</p>
+                                <div class="package-price">
+                                    <span class="price-amount">₹65,000.00</span>
+                                    <span class="price-label">Starting Price</span>
+                                </div>
+                                <ul class="package-features">
+                                    <li><i class="fas fa-check"></i> Pangong Lake</li>
+                                    <li><i class="fas fa-check"></i> Nubra Valley</li>
+                                    <li><i class="fas fa-check"></i> Mountain Passes</li>
+                                </ul>
+                                <button class="btn-package">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Navigation -->
+                    <div class="slider-controls">
+                        <button class="slider-btn prev-btn" id="domesticPrev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="slider-btn next-btn" id="domesticNext">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Slider Dots -->
+                    <div class="slider-dots" id="domesticDots">
+                        <!-- Dots will be generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Honeymoon Holiday Packages with Slider -->
+<div class="package-section">
+    <div class="section-header">
+        <h2 class="section-title">Honeymoon Holiday Packages</h2>
+        <div class="section-description">
+            <p class="description-text short-text">
+                Whether you picture your honeymoon strolling hand-in-hand through Paris, waking up to Switzerland's Alpine magic, relaxing by Australia's golden beaches, or exploring the dreamy landscapes of New Zealand — YBL Tours designs each experience with unmatched luxury and intimate perfection...
+                <a href="#" class="read-more">read more</a>
+            </p>
+            <p class="description-text full-text" style="display: none;">
+                Whether you picture your honeymoon strolling hand-in-hand through Paris, waking up to Switzerland's Alpine magic, relaxing by Australia's golden beaches, or exploring the dreamy landscapes of New Zealand — YBL Tours designs each experience with unmatched luxury and intimate perfection. Even the valleys of Kashmir turn into a paradise when explored together. Our honeymoon packages are carefully crafted to create unforgettable memories, blending romance, adventure, and luxury in the world's most beautiful destinations.
+                <a href="#" class="read-less">read less</a>
+            </p>
+        </div>
+    </div>
+    
+    <!-- Slider Container -->
+    <div class="slider-container">
+        <div class="packages-slider" id="honeymoonSlider">
+            <!-- Maldives Romance -->
+            <div class="package-card">
+                <div class="package-image">
+                    <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Maldives Romance">
+                    <div class="package-overlay"></div>
+                    <div class="package-badge">Luxury Escape</div>
+                </div>
+                <div class="package-content">
+                    <h3 class="package-title">Maldives Romance</h3>
+                    <p class="package-subtitle">Honeymoon Packages</p>
+                    <p class="package-duration">7 Days / 6 Nights</p>
+                    <div class="package-price">
+                        <span class="price-amount">₹89,999.00</span>
+                        <span class="price-label">Starting Price</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Overwater Villa</li>
+                        <li><i class="fas fa-check"></i> Private Pool</li>
+                        <li><i class="fas fa-check"></i> Couple Spa</li>
+                    </ul>
+                    <button class="btn-package">
+                        <i class="fas fa-arrow-right"></i>
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mauritius Paradise -->
+            <div class="package-card">
+                <div class="package-image">
+                    <img src="https://images.unsplash.com/photo-1523053473-4c4b81c4e4e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mauritius Paradise">
+                    <div class="package-overlay"></div>
+                    <div class="package-badge">Island Romance</div>
+                </div>
+                <div class="package-content">
+                    <h3 class="package-title">Mauritius Paradise</h3>
+                    <p class="package-subtitle">Honeymoon Packages</p>
+                    <p class="package-duration">8 Days / 7 Nights</p>
+                    <div class="package-price">
+                        <span class="price-amount">₹78,500.00</span>
+                        <span class="price-label">Starting Price</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Beach Resort</li>
+                        <li><i class="fas fa-check"></i> Water Sports</li>
+                        <li><i class="fas fa-check"></i> Island Tours</li>
+                    </ul>
+                    <button class="btn-package">
+                        <i class="fas fa-arrow-right"></i>
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <!-- Australian Dreams -->
+            <div class="package-card">
+                <div class="package-image">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Australian Dreams">
+                    <div class="package-overlay"></div>
+                    <div class="package-badge">Adventure & Romance</div>
+                </div>
+                <div class="package-content">
+                    <h3 class="package-title">Australian Dreams</h3>
+                    <p class="package-subtitle">Honeymoon Packages</p>
+                    <p class="package-duration">10 Days / 9 Nights</p>
+                    <div class="package-price">
+                        <span class="price-amount">₹1,25,000.00</span>
+                        <span class="price-label">Starting Price</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Great Barrier Reef</li>
+                        <li><i class="fas fa-check"></i> Sydney Opera House</li>
+                        <li><i class="fas fa-check"></i> Wine Tasting</li>
+                    </ul>
+                    <button class="btn-package">
+                        <i class="fas fa-arrow-right"></i>
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <!-- New Zealand Magic -->
+            <div class="package-card">
+                <div class="package-image">
+                    <img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="New Zealand Magic">
+                    <div class="package-overlay"></div>
+                    <div class="package-badge">Scenic Beauty</div>
+                </div>
+                <div class="package-content">
+                    <h3 class="package-title">New Zealand Magic</h3>
+                    <p class="package-subtitle">Honeymoon Packages</p>
+                    <p class="package-duration">12 Days / 11 Nights</p>
+                    <div class="package-price">
+                        <span class="price-amount">₹1,38,000.00</span>
+                        <span class="price-label">Starting Price</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Milford Sound</li>
+                        <li><i class="fas fa-check"></i> Hobbiton Tour</li>
+                        <li><i class="fas fa-check"></i> Glacier Experience</li>
+                    </ul>
+                    <button class="btn-package">
+                        <i class="fas fa-arrow-right"></i>
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <!-- Swiss Alps Romance -->
+            <div class="package-card">
+                <div class="package-image">
+                    <img src="https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Swiss Alps Romance">
+                    <div class="package-overlay"></div>
+                    <div class="package-badge">Alpine Luxury</div>
+                </div>
+                <div class="package-content">
+                    <h3 class="package-title">Swiss Alps Romance</h3>
+                    <p class="package-subtitle">Honeymoon Packages</p>
+                    <p class="package-duration">9 Days / 8 Nights</p>
+                    <div class="package-price">
+                        <span class="price-amount">₹1,45,000.00</span>
+                        <span class="price-label">Starting Price</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Mountain Resorts</li>
+                        <li><i class="fas fa-check"></i> Scenic Train Rides</li>
+                        <li><i class="fas fa-check"></i> Lake Geneva Cruise</li>
+                    </ul>
+                    <button class="btn-package">
+                        <i class="fas fa-arrow-right"></i>
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <!-- Parisian Love -->
+            <div class="package-card">
+                <div class="package-image">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Parisian Love">
+                    <div class="package-overlay"></div>
+                    <div class="package-badge">City of Love</div>
+                </div>
+                <div class="package-content">
+                    <h3 class="package-title">Parisian Love</h3>
+                    <p class="package-subtitle">Honeymoon Packages</p>
+                    <p class="package-duration">6 Days / 5 Nights</p>
+                    <div class="package-price">
+                        <span class="price-amount">₹95,000.00</span>
+                        <span class="price-label">Starting Price</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Eiffel Tower</li>
+                        <li><i class="fas fa-check"></i> Seine River Cruise</li>
+                        <li><i class="fas fa-check"></i> Romantic Dinners</li>
+                    </ul>
+                    <button class="btn-package">
+                        <i class="fas fa-arrow-right"></i>
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bali Romance -->
+            <div class="package-card">
+                <div class="package-image">
+                    <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Bali Romance">
+                    <div class="package-overlay"></div>
+                    <div class="package-badge">Tropical Paradise</div>
+                </div>
+                <div class="package-content">
+                    <h3 class="package-title">Bali Romance</h3>
+                    <p class="package-subtitle">Honeymoon Packages</p>
+                    <p class="package-duration">7 Days / 6 Nights</p>
+                    <div class="package-price">
+                        <span class="price-amount">₹54,999.00</span>
+                        <span class="price-label">Starting Price</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Private Villa</li>
+                        <li><i class="fas fa-check"></i> Temple Tours</li>
+                        <li><i class="fas fa-check"></i> Couple Massage</li>
+                    </ul>
+                    <button class="btn-package">
+                        <i class="fas fa-arrow-right"></i>
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <!-- Thailand Honeymoon -->
+            <div class="package-card">
+                <div class="package-image">
+                    <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Thailand Honeymoon">
+                    <div class="package-overlay"></div>
+                    <div class="package-badge">Exotic Escape</div>
+                </div>
+                <div class="package-content">
+                    <h3 class="package-title">Thailand Honeymoon</h3>
+                    <p class="package-subtitle">Honeymoon Packages</p>
+                    <p class="package-duration">8 Days / 7 Nights</p>
+                    <div class="package-price">
+                        <span class="price-amount">₹62,000.00</span>
+                        <span class="price-label">Starting Price</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Phi Phi Islands</li>
+                        <li><i class="fas fa-check"></i> Luxury Resorts</li>
+                        <li><i class="fas fa-check"></i> Cultural Shows</li>
+                    </ul>
+                    <button class="btn-package">
+                        <i class="fas fa-arrow-right"></i>
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dubai Luxury -->
+            <div class="package-card">
+                <div class="package-image">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Dubai Luxury">
+                    <div class="package-overlay"></div>
+                    <div class="package-badge">Urban Luxury</div>
+                </div>
+                <div class="package-content">
+                    <h3 class="package-title">Dubai Luxury</h3>
+                    <p class="package-subtitle">Honeymoon Packages</p>
+                    <p class="package-duration">6 Days / 5 Nights</p>
+                    <div class="package-price">
+                        <span class="price-amount">₹82,000.00</span>
+                        <span class="price-label">Starting Price</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Burj Khalifa</li>
+                        <li><i class="fas fa-check"></i> Desert Safari</li>
+                        <li><i class="fas fa-check"></i> Luxury Shopping</li>
+                    </ul>
+                    <button class="btn-package">
+                        <i class="fas fa-arrow-right"></i>
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sri Lanka Romance -->
+            <div class="package-card">
+                <div class="package-image">
+                    <img src="https://images.unsplash.com/photo-1559666126-84d0e8f5f8e6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Sri Lanka Romance">
+                    <div class="package-overlay"></div>
+                    <div class="package-badge">Pearl of Indian Ocean</div>
+                </div>
+                <div class="package-content">
+                    <h3 class="package-title">Sri Lanka Romance</h3>
+                    <p class="package-subtitle">Honeymoon Packages</p>
+                    <p class="package-duration">7 Days / 6 Nights</p>
+                    <div class="package-price">
+                        <span class="price-amount">₹48,500.00</span>
+                        <span class="price-label">Starting Price</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Beach Escapes</li>
+                        <li><i class="fas fa-check"></i> Cultural Heritage</li>
+                        <li><i class="fas fa-check"></i> Wildlife Safari</li>
+                    </ul>
+                    <button class="btn-package">
+                        <i class="fas fa-arrow-right"></i>
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Navigation -->
+        <div class="slider-controls">
+            <button class="slider-btn prev-btn" id="honeymoonPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn next-btn" id="honeymoonNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Slider Dots -->
+        <div class="slider-dots" id="honeymoonDots">
+            <!-- Dots will be generated by JavaScript -->
+        </div>
+    </div>
+</div>
+
+            <!-- YBL TOURS Specials -->
+            <div class="package-section">
+                <div class="section-header">
+                    <h2 class="section-title">YBL TOURS Specials</h2>
+                    <p class="section-description">
+                        Watch the beauty of India and the World through a different lens! Begin your next adventure 
+                        now only with YBL TOURS Special Tour Packages. The... 
+                        <a href="#" class="read-more">read more</a>
+                    </p>
+                </div>
+                
+                <div class="packages-grid">
+                    <!-- Rann of Kutch -->
+                    <div class="package-card">
+                        <div class="package-image">
+                            <img src="https://images.unsplash.com/photo-1587478225193-858a867d0b91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Rann of Kutch">
+                            <div class="package-overlay"></div>
+                            <div class="package-badge">Special</div>
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Rann of Kutch</h3>
+                            <div class="package-price">
+                                <span class="price-amount">₹17,300.00</span>
+                                <span class="price-label">Starting From</span>
+                            </div>
+                            <button class="btn-package">
+                                <i class="fas fa-arrow-right"></i>
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Japan -->
+                    <div class="package-card">
+                        <div class="package-image">
+                            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Japan Cherry Blossom">
+                            <div class="package-overlay"></div>
+                            <div class="package-badge">Special</div>
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Japan</h3>
+                            <p class="package-subtitle">Cherry Blossom</p>
+                            <div class="package-price">
+                                <span class="price-amount">₹2,84,500.00</span>
+                                <span class="price-label">Starting From</span>
+                            </div>
+                            <button class="btn-package">
+                                <i class="fas fa-arrow-right"></i>
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Spiritual -->
+                    <div class="package-card">
+                        <div class="package-image">
+                            <img src="https://images.unsplash.com/photo-1587132137056-4c6e38f6809b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Spiritual Tour">
+                            <div class="package-overlay"></div>
+                            <div class="package-badge">Special</div>
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Spiritual</h3>
+                            <p class="package-subtitle">Tour Packages</p>
+                            <div class="package-price">
+                                <span class="price-amount">₹12,100.00</span>
+                                <span class="price-label">Starting From</span>
+                            </div>
+                            <button class="btn-package">
+                                <i class="fas fa-arrow-right"></i>
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- International -->
+                    <div class="package-card">
+                        <div class="package-image">
+                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="International Tour">
+                            <div class="package-overlay"></div>
+                            <div class="package-badge">Special</div>
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">International</h3>
+                            <p class="package-subtitle">Tour Packages</p>
+                            <div class="package-price">
+                                <span class="price-amount">₹37,200.00</span>
+                                <span class="price-label">Starting From</span>
+                            </div>
+                            <button class="btn-package">
+                                <i class="fas fa-arrow-right"></i>
+                                View Details
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-<!-- AI Assistant Widget -->
-<div class="ai-assistant">
-    <div class="ai-toggle">
-        <i class="fas fa-robot"></i>
-        <div class="ai-pulse"></div>
-    </div>
-    <div class="ai-chat-window">
-        <div class="ai-header">
-            <div class="ai-avatar">
-                <i class="fas fa-robot"></i>
-            </div>
-            <div class="ai-info">
-                <h4>Hi, I'm Uma!</h4>
-                <p>Your AI Assistant</p>
-                <div class="ai-status">
-                    <span class="status-dot"></span>
-                    Online
-                </div>
-            </div>
-            <button class="ai-close">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        
-        <div class="ai-messages">
-            <div class="ai-message">
-                <div class="message-avatar">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <div class="message-content">
-                    <p>Hello! I'm Uma, your AI travel assistant. I can help you find perfect holiday packages, compare prices, check availability, and answer all your travel questions. How can I assist you today? 😊</p>
-                    <span class="message-time">Just now</span>
-                </div>
-            </div>
-            
-            <!-- Quick Suggestions -->
-            <div class="quick-suggestions">
-                <p>Quick questions you can ask:</p>
-                <div class="suggestion-chips">
-                    <button class="suggestion-chip" data-question="Show me best Europe packages">Europe Packages</button>
-                    <button class="suggestion-chip" data-question="What are honeymoon destinations?">Honeymoon Ideas</button>
-                    <button class="suggestion-chip" data-question="Best time to visit Thailand">Travel Tips</button>
-                    <button class="suggestion-chip" data-question="Current offers and deals">Special Offers</button>
-                </div>
-            </div>
-        </div>
-        
-        <div class="ai-input-container">
-            <div class="ai-input">
-                <input type="text" placeholder="Ask me about packages, destinations, or deals..." id="ai-chat-input">
-                <button class="ai-send" id="ai-send-btn">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
-            <div class="ai-disclaimer">
-                <small>Powered by DeepSeek AI • I can help with travel planning</small>
-            </div>
-        </div>
-    </div>
-</div> 
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
         </div>
     </section>
 
@@ -793,6 +1272,39 @@
             </div>
         </div>
     </section>
+
+    <!-- AI Assistant -->
+    <button class="ai-toggle">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <div class="ai-assistant">
+        <div class="ai-header">
+            <h3><i class="fas fa-robot"></i> Uma - Travel Assistant</h3>
+            <button class="ai-close">&times;</button>
+        </div>
+        
+        <div class="ai-messages">
+            <!-- Messages will be added here dynamically -->
+        </div>
+        
+        <div class="suggestions-container">
+            <div class="suggestions-title">Quick questions:</div>
+            <div class="suggestion-chips">
+                <div class="suggestion-chip" data-question="Show me Europe packages">Europe Packages</div>
+                <div class="suggestion-chip" data-question="Best honeymoon destinations">Honeymoon</div>
+                <div class="suggestion-chip" data-question="Thailand travel packages">Thailand</div>
+                <div class="suggestion-chip" data-question="Current offers and discounts">Special Offers</div>
+            </div>
+        </div>
+        
+        <div class="ai-input-area">
+            <textarea id="ai-chat-input" placeholder="Ask about travel destinations, packages, or planning..." rows="1"></textarea>
+            <button id="ai-send-btn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -939,9 +1451,34 @@
             </div>
         </div>
     </footer>
+    <!-- Calendar Modal -->
+<div id="calendarModal" class="calendar-modal">
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <button class="calendar-nav" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+            <h3 id="calendarMonthYear">January 2024</h3>
+            <button class="calendar-nav" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="calendar-grid">
+            <div class="calendar-weekdays">
+                <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
+            </div>
+            <div class="calendar-days" id="calendarDays"></div>
+        </div>
+        <div class="calendar-actions">
+            <button class="btn-clear" id="clearDate">Clear</button>
+            <button class="btn-apply" id="applyDate">Apply</button>
+        </div>
+    </div>
+</div>
 
     <script src="scripts/main.js"></script>
     <script src="scripts/search.js"></script>
     <script src="scripts/ai-assistant.js"></script>
+    <script src="scripts/amadeus-auth.js"></script>
+<script src="scripts/airport-suggestions.js"></script>
+<script src="scripts/calendar.js"></script>
+<script src="scripts/flights.js"></script>
+<script src="scripts/passenger.js"></script>
 </body>
 </html>

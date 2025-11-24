@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Search - YBL Tours</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/flights.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="container">
+            <div class="top-header-content">
+                <div class="header-contact">
+                    <span><i class="fas fa-phone"></i> +1 (555) 123-4567</span>
+                    <span><i class="fas fa-envelope"></i> info@ybltours.com</span>
+                </div>
+                <div class="header-actions">
+                    <a href="#"><i class="fas fa-gift"></i> Gift Cards & Offers</a>
+                    <a href="#"><i class="fas fa-star"></i> Loyalty Program</a>
+                    <a href="#"><i class="fas fa-user"></i> My Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="YBL TOURS" class="logo-image">
+            </div>
+            
+            <div class="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-umbrella-beach"></i> Holidays</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-money-bill-wave"></i> Forex</a></li>
+                    <li class="nav-item"><a href="flights.html" class="nav-link active"><i class="fas fa-plane"></i> Flights</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-hotel"></i> Hotels</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-ship"></i> Cruise</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-train"></i> Eurail</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn-forex">
+                    <i class="fas fa-money-bill-wave"></i>
+                    Buy Forex
+                </button>
+                <div class="user-buttons">
+                    <button class="btn-login">Login</button>
+                    <button class="btn-signup">Sign Up</button>
+                </div>
+            </div>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flight Search Section -->
+    <section class="flight-search-section">
+        <div class="container">
+            <div class="flight-search-content">
+                <h1>Find Your Perfect Flight</h1>
+                <p>Search and compare flights from 1000+ airlines worldwide</p>
+                
+                <!-- Flight Search Form -->
+                <div class="flight-search-form">
+                    <div class="trip-type">
+                        <button class="trip-btn active" data-trip="one-way">One Way</button>
+                        <button class="trip-btn" data-trip="round-trip">Round Trip</button>
+                    </div>
+
+                    <form id="flightSearchForm">
+                        <div class="form-grid">
+                            <!-- From Airport -->
+                            <div class="form-group">
+                                <label for="departureAirport">
+                                    <i class="fas fa-plane-departure"></i>
+                                    From
+                                </label>
+                                <input type="text" id="departureAirport" class="airport-search form-input" placeholder="City or Airport" autocomplete="off" required>
+                            </div>
+
+                            <!-- To Airport -->
+                            <div class="form-group">
+                                <label for="arrivalAirport">
+                                    <i class="fas fa-plane-arrival"></i>
+                                    To
+                                </label>
+                                <input type="text" id="arrivalAirport" class="airport-search form-input" placeholder="City or Airport" autocomplete="off" required>
+                            </div>
+
+<!-- Departure Date -->
+<div class="form-group">
+    <label for="departureDate">
+        <i class="fas fa-calendar-alt"></i>
+        Departure
+    </label>
+    <div class="custom-date-input">
+        <input type="text" id="departureDate" class="form-input date-display" placeholder="Select date" readonly>
+        <i class="fas fa-calendar calendar-icon"></i>
+    </div>
+</div>
+
+<!-- Return Date -->
+<div class="form-group return-date-group">
+    <label for="returnDate">
+        <i class="fas fa-calendar-check"></i>
+        Return
+    </label>
+    <div class="custom-date-input">
+        <input type="text" id="returnDate" class="form-input date-display" placeholder="Select date" readonly>
+        <i class="fas fa-calendar calendar-icon"></i>
+    </div>
+</div>
+
+<!-- Calendar Modal -->
+<div id="calendarModal" class="calendar-modal">
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <button class="calendar-nav" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+            <h3 id="calendarMonthYear">January 2024</h3>
+            <button class="calendar-nav" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="calendar-grid">
+            <div class="calendar-weekdays">
+                <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
+            </div>
+            <div class="calendar-days" id="calendarDays"></div>
+        </div>
+        <div class="calendar-actions">
+            <button class="btn-clear" id="clearDate">Clear</button>
+            <button class="btn-apply" id="applyDate">Apply</button>
+        </div>
+    </div>
+</div>
+
+                            <!-- Passengers -->
+                            <div class="form-group">
+                                <label for="passengers">
+                                    <i class="fas fa-users"></i>
+                                    Passengers
+                                </label>
+                                <div class="passenger-selector">
+                                    <input type="text" id="passengers-display" class="form-input" value="1 Adult" readonly>
+                                    <div class="passenger-dropdown" id="passengerDropdown">
+                                        <div class="passenger-row">
+                                            <span>Adults (12+ years)</span>
+                                            <div class="passenger-controls">
+                                                <button type="button" class="passenger-btn" data-type="adults" data-action="decrease">-</button>
+                                                <span id="adults-count">1</span>
+                                                <button type="button" class="passenger-btn" data-type="adults" data-action="increase">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="passenger-row">
+                                            <span>Children (2-11 years)</span>
+                                            <div class="passenger-controls">
+                                                <button type="button" class="passenger-btn" data-type="children" data-action="decrease">-</button>
+                                                <span id="children-count">0</span>
+                                                <button type="button" class="passenger-btn" data-type="children" data-action="increase">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="passenger-row">
+                                            <span>Infants (Under 2)</span>
+                                            <div class="passenger-controls">
+                                                <button type="button" class="passenger-btn" data-type="infants" data-action="decrease">-</button>
+                                                <span id="infants-count">0</span>
+                                                <button type="button" class="passenger-btn" data-type="infants" data-action="increase">+</button>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn-done" id="passengerDone">Done</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Class -->
+                            <div class="form-group">
+                                <label for="travel-class">
+                                    <i class="fas fa-crown"></i>
+                                    Class
+                                </label>
+                                <select id="travel-class" class="form-input">
+                                    <option value="ECONOMY">Economy</option>
+                                    <option value="PREMIUM_ECONOMY">Premium Economy</option>
+                                    <option value="BUSINESS">Business</option>
+                                    <option value="FIRST">First Class</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-search-flight">
+                            <i class="fas fa-search"></i>
+                            Search Flights
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="popular-destinations">
+        <div class="container">
+            <h2>Popular Destinations</h2>
+            <div class="destinations-grid">
+                <div class="destination-card" data-from="DEL" data-to="BOM">
+                    <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mumbai">
+                    <div class="destination-info">
+                        <h3>Delhi to Mumbai</h3>
+                        <p>Starting from ₹3,499</p>
+                    </div>
+                </div>
+                <div class="destination-card" data-from="DEL" data-to="BLR">
+                    <img src="https://images.unsplash.com/photo-1596176530529-78163a4f7af2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Bangalore">
+                    <div class="destination-info">
+                        <h3>Delhi to Bangalore</h3>
+                        <p>Starting from ₹4,199</p>
+                    </div>
+                </div>
+                <div class="destination-card" data-from="DEL" data-to="GOI">
+                    <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Goa">
+                    <div class="destination-info">
+                        <h3>Delhi to Goa</h3>
+                        <p>Starting from ₹5,299</p>
+                    </div>
+                </div>
+                <div class="destination-card" data-from="DEL" data-to="DXB">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Dubai">
+                    <div class="destination-info">
+                        <h3>Delhi to Dubai</h3>
+                        <p>Starting from ₹12,499</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Book With Us -->
+    <section class="why-book">
+        <div class="container">
+            <h2>Why Book With YBL Tours?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Safe & Secure</h3>
+                    <p>Your payments are protected with advanced security</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-rupee-sign"></i>
+                    <h3>Best Price Guarantee</h3>
+                    <p>Find cheaper? We'll match the price</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-plane"></i>
+                    <h3>Easy Cancellation</h3>
+                    <p>Flexible cancellation policies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>YBL Tours</h3>
+                    <p>Your trusted travel partner for unforgettable journeys around the world.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="flights.html">Flights</a></li>
+                        <li><a href="#">Hotels</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@ybltours.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/amadeus-auth.js"></script>
+    <script src="scripts/airport-suggestions.js"></script>
+    <script src="scripts/flights.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

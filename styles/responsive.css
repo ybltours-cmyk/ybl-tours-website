@@ -142,3 +142,19 @@
         border: 1px solid #000;
     }
 }
+/* Add to responsive.css */
+@media (max-width: 768px) {
+    .passenger-dropdown {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .search-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+}

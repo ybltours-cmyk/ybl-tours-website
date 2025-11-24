@@ -1,0 +1,873 @@
+/* EMERGENCY FIX - Add this to the TOP of flights.css */
+.passenger-dropdown {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: white !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+    z-index: 10000 !important;
+    margin-top: 8px !important;
+}
+
+.passenger-selector.active .passenger-dropdown {
+    display: block !important;
+}
+
+/* Calendar emergency fix */
+.calendar-modal {
+    z-index: 99999 !important;
+}
+
+.calendar-container {
+    z-index: 99999 !important;
+}
+
+/* Make sure inputs are visible */
+.form-input, .date-input, .airport-search {
+    color: #1f2937 !important;
+    background: white !important;
+}
+/* FIX FOR WHITE TEXT ISSUE */
+.suggestions-dropdown {
+    background: white !important;
+    color: #1f2937 !important;
+}
+
+.suggestion-item {
+    color: #1f2937 !important;
+}
+
+.suggestion-item strong {
+    color: #1f2937 !important;
+}
+
+.airport-details .city {
+    color: #374151 !important;
+}
+
+.airport-details .code {
+    color: #3b82f6 !important;
+}
+
+.country {
+    color: #6b7280 !important;
+}
+
+/* Calendar visibility fix */
+.date-input {
+    color: #1f2937 !important;
+    background: white !important;
+}
+
+.form-input {
+    color: #1f2937 !important;
+    background: white !important;
+}
+
+/* Flight Search Specific Styles */
+.flight-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding: 4rem 0;
+    color: white;
+}
+
+.flight-hero-content {
+    text-align: center;
+}
+
+.flight-hero-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff 0%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.flight-hero-content p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 3rem;
+}
+
+/* Flight Search Form */
+.flight-search-form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.trip-type {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.trip-btn {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #e2e8f0;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.trip-btn.active {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+.trip-btn:hover:not(.active) {
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+/* Form Grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* DARK CALENDAR STYLING */
+.date-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    background: white;
+    transition: all 0.3s ease;
+    color: #1f2937;
+}
+
+.date-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Dark Calendar Styling - Webkit Browsers */
+.date-input::-webkit-calendar-picker-indicator {
+    filter: invert(0.5);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.date-input::-webkit-calendar-picker-indicator:hover {
+    filter: invert(0.3);
+    background: #f3f4f6;
+}
+
+.date-input::-webkit-datetime-edit-fields-wrapper {
+    padding: 2px;
+}
+
+.date-input::-webkit-datetime-edit-text {
+    color: #6b7280;
+    padding: 0 0.2em;
+}
+
+.date-input::-webkit-datetime-edit-month-field,
+.date-input::-webkit-datetime-edit-day-field,
+.date-input::-webkit-datetime-edit-year-field {
+    color: #1f2937;
+    padding: 0 0.2em;
+}
+
+/* For Firefox */
+.date-input[type="date"] {
+    color: #1f2937;
+}
+
+.date-input[type="date"]:in-range {
+    color: #1f2937;
+}
+
+/* Return Date Group */
+.return-date-group {
+    display: block !important; /* Always show, we'll handle visibility via JS */
+}
+
+.return-date-group.hidden {
+    display: none !important;
+}
+
+/* Input with Swap */
+.input-with-swap {
+    position: relative;
+}
+
+.swap-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #3b82f6;
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.swap-btn:hover {
+    background: #2563eb;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Add to flights.css */
+.passenger-selector {
+    position: relative;
+    z-index: 1000;
+}
+
+.passenger-dropdown {
+    z-index: 1001;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+
+.passenger-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    z-index: 1001; /* Higher than parent */
+    display: none;
+    margin-top: 8px;
+    min-width: 280px;
+}
+
+.passenger-selector.active .passenger-dropdown {
+    display: block;
+}
+
+/* Ensure dropdown appears above everything */
+.flight-search-form {
+    position: relative;
+    z-index: 999; /* Lower than passenger dropdown */
+}
+
+/* Fix for any overlapping sections */
+.holiday-packages,
+.popular-destinations,
+.why-book {
+    position: relative;
+    z-index: 1; /* Normal stacking */
+}
+
+/* Additional fix for the search container */
+.search-container {
+    position: relative;
+    z-index: 100; /* Normal z-index for search */
+}
+
+/* Make sure the passenger dropdown is always on top */
+.passenger-dropdown {
+    z-index: 10000 !important; /* Very high z-index to ensure it's on top */
+}
+
+.passenger-dropdown.show {
+    display: block;
+}
+
+.passenger-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.passenger-row:last-child {
+    border-bottom: none;
+}
+
+.passenger-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.passenger-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #3b82f6;
+    background: white;
+    color: #3b82f6;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.passenger-btn:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+.passenger-btn:disabled {
+    border-color: #cbd5e1;
+    color: #cbd5e1;
+    cursor: not-allowed;
+}
+
+.passenger-btn:disabled:hover {
+    background: white;
+    color: #cbd5e1;
+}
+
+.btn-done {
+    width: 100%;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+.btn-done:hover {
+    background: #2563eb;
+}
+
+/* Search Button */
+.btn-search-flight {
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    color: white;
+    border: none;
+    padding: 1.2rem 3rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.btn-search-flight:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+/* Popular Destinations */
+.popular-destinations {
+    padding: 4rem 0;
+    background: #f8fafc;
+}
+
+.popular-destinations h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 3rem;
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.destination-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.destination-info {
+    padding: 1.5rem;
+}
+
+.destination-info h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+
+.destination-info p {
+    color: #3b82f6;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Why Book Section */
+.why-book {
+    padding: 4rem 0;
+}
+
+.why-book h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: #3b82f6;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Suggestions Dropdown */
+.suggestions-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.suggestions-dropdown.show {
+    display: block;
+}
+
+.suggestion-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #f8fafc;
+    transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+    background-color: #f8fafc;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.airport-details {
+    margin: 4px 0;
+    font-size: 0.9em;
+}
+
+.airport-details .city {
+    font-weight: 500;
+    color: #374151;
+}
+
+.airport-details .code {
+    color: #3b82f6;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.country {
+    font-size: 0.8em;
+    color: #6b7280;
+}
+
+.suggestion-error {
+    padding: 12px 15px;
+    color: #dc2626;
+    font-style: italic;
+    text-align: center;
+}
+
+.airport-search {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.airport-search:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .flight-hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .flight-search-form {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .trip-type {
+        flex-wrap: wrap;
+    }
+    
+    .popular-destinations h2,
+    .why-book h2 {
+        font-size: 2rem;
+    }
+    
+    .input-with-swap .swap-btn {
+        right: 5px;
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .flight-hero {
+        padding: 2rem 0;
+    }
+    
+    .flight-hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .flight-hero-content p {
+        font-size: 1rem;
+    }
+    
+    .date-input,
+    .form-input {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+}
+/* Custom Calendar Styles */
+.custom-date-input {
+    position: relative;
+}
+
+.date-display {
+    cursor: pointer;
+    background: white;
+}
+
+.calendar-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b7280;
+    pointer-events: none;
+}
+
+/* Calendar Modal */
+.calendar-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-modal.show {
+    display: flex;
+}
+
+.calendar-container {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    min-width: 320px;
+    max-width: 90vw;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header h3 {
+    margin: 0;
+    color: #1f2937;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.calendar-nav {
+    background: #f8fafc;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #374151;
+    transition: all 0.3s ease;
+}
+
+.calendar-nav:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 600;
+    color: #6b7280;
+    font-size: 0.8rem;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.calendar-day {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.calendar-day:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+.calendar-day.selected {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+.calendar-day.today {
+    background: #eff6ff;
+    color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+.calendar-day.other-month {
+    color: #d1d5db;
+    cursor: not-allowed;
+}
+
+.calendar-day.other-month:hover {
+    background: transparent;
+    border-color: transparent;
+}
+
+.calendar-day.disabled {
+    color: #d1d5db;
+    cursor: not-allowed;
+    background: #f9fafb;
+}
+
+.calendar-day.disabled:hover {
+    background: #f9fafb;
+    border-color: transparent;
+}
+
+.calendar-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.btn-clear, .btn-apply {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.btn-clear {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.btn-clear:hover {
+    background: #e5e7eb;
+}
+
+.btn-apply {
+    background: #3b82f6;
+    color: white;
+}
+
+.btn-apply:hover {
+    background: #2563eb;
+}
+
+/* Dark theme for calendar */
+@media (prefers-color-scheme: dark) {
+    .calendar-container {
+        background: #1f2937;
+        color: white;
+    }
+    
+    .calendar-header h3 {
+        color: white;
+    }
+    
+    .calendar-nav {
+        background: #374151;
+        color: white;
+    }
+    
+    .calendar-day {
+        color: white;
+    }
+    
+    .calendar-day:hover {
+        background: #374151;
+    }
+    
+    .calendar-day.other-month {
+        color: #6b7280;
+    }
+}
